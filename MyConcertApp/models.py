@@ -21,7 +21,7 @@ class Profile(models.Model):
 class UserConcert(models.Model):
   ''' joins the user with the concert attended and adds user notes and rating '''
 
-  user_id = models.ForeignKey(Profile, on_delete=models.CASCADE)
+  user = models.ForeignKey(Profile, on_delete=models.CASCADE)
   concert_id = models.CharField(max_length=20)
   notes = models.TextField(max_length=500, blank=True)
   rating = models.IntegerField(
@@ -32,7 +32,7 @@ class UserConcert(models.Model):
 class UserConcertMedia(models.Model):
   ''' allows users to add multiple photos/videos per concert '''
 
-  user_concert_id = models.ForeignKey(UserConcert, on_delete=models.CASCADE)
+  user_concert = models.ForeignKey(UserConcert, on_delete=models.CASCADE)
   media = models.ImageField(upload_to='media')
   description = models.CharField(max_length=50, blank=True)
   is_private = models.BooleanField(default=True)
