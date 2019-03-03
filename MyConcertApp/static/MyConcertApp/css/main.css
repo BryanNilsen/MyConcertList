@@ -1,0 +1,15 @@
+.logo {
+  color: red;
+}
+
+
+/* navigation */
+.nav_auth {
+ background: green;
+ color: white;
+}
+
+.nav_no_auth {
+  background: gray;
+  color: white;
+}

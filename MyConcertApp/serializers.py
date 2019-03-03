@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from api.models import Profile
-from api.models import UserConcert
-from api.models import UserConcertMedia
+from MyConcertApp.models import Profile
+from MyConcertApp.models import UserConcert
+from MyConcertApp.models import UserConcertMedia
 
 
 

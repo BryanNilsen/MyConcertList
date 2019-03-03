@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'MyConcertApp/css/main.css' %}">
+        <title>Concertz</title>
+    </head>
+
+    <body>
+
+        {% block nav %}
+        {% if user.is_authenticated %}
+        <nav id="navigation" class="nav_auth">
+          <p>user is authenticated</p>
+        </nav>
+        {% else %}
+        <nav id="navigation" class="nav_no_auth">
+          <p>user is not authenticated</p>
+        </nav>
+        {% endif %}
+        {% endblock nav %}
+
+      <div>
+        {% block content %}{% endblock content %}
+      </div>
+
+    </body>
+
+
+</html>
